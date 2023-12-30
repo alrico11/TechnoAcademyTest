@@ -1125,3 +1125,26 @@ describe('Techno Academy Comment Section', () => {
     });
   });
 })
+describe('Techno Academy Cek Status Register', () => {
+  describe('Search email progress register', () => {
+    it('should return status 200 for POST request', async () => {
+      const response = await request.get('statuslog/search-email/alricowibowo@gmail.com')
+        .set('Accept', 'application/json')
+      expect(response.status).toBe(200);
+    });
+  });
+  describe('Search email progress register email null', () => {
+    it('should return status 200 for POST request', async () => {
+      const response = await request.get('statuslog/search-email/')
+        .set('Accept', 'application/json')
+      expect(response.status).toBe(200);
+    });
+  });
+  describe('Search email progress register email not valid', () => {
+    it('should return status 200 for POST request', async () => {
+      const response = await request.get('statuslog/search-email/alricosasda@ma.com')
+        .set('Accept', 'application/json')
+      expect(response.status).toBe(200);
+    });
+  });
+})
